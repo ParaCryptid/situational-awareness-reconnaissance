@@ -1,0 +1,14 @@
+tweepy
+transformers
+pytest
+exiftoolopencv-python-headless
+onnxruntime
+nvidia-pyindex
+nvidia-tensorrt
+grpcio
+protobuf
+cloudflare
+influxdb-client
+immudb
+redis
+ipfshttpclient
