@@ -1,0 +1,1 @@
+# Placeholder for technical_doc.md in Situational_Awareness_and_Reconnaissance/documentation
