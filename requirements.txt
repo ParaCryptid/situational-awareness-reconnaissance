@@ -12,3 +12,17 @@ influxdb-client
 immudb
 redis
 ipfshttpclient
+scikit-learn
+tensorflow
+pytorch-lightning
+flask
+dash
+geojson
+satpy
+mediapipe
+aiocrawler
+scrapy
+arviz
+pycryptodome
+langchain
+federated-learning
