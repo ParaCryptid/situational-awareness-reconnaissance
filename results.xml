@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="2" failures="0" skipped="0" tests="2" time="0.841" timestamp="2025-01-21T17:03:14.144137" hostname="1ba1a0bc-dab7-4071-9aee-5602823d8343"><testcase classname="" name="tests.test_deepfake_detector" time="0.000"><error message="collection failure">#x1B[31mImportError while importing test module '/mnt/data/OSINT-main/OSINT-main/tests/test_deepfake_detector.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+#x1B[1m#x1B[31m/usr/local/lib/python3.11/importlib/__init__.py#x1B[0m:126: in import_module
+    #x1B[94mreturn#x1B[39;49;00m _bootstrap._gcd_import(name[level:], package, level)#x1B[90m#x1B[39;49;00m
+#x1B[1m#x1B[31mtests/test_deepfake_detector.py#x1B[0m:2: in &lt;module&gt;
+    #x1B[94mfrom#x1B[39;49;00m #x1B[04m#x1B[96msrc#x1B[39;49;00m#x1B[04m#x1B[96m.#x1B[39;49;00m#x1B[04m#x1B[96mai_engine#x1B[39;49;00m#x1B[04m#x1B[96m.#x1B[39;49;00m#x1B[04m#x1B[96mdeepfake_detector#x1B[39;49;00m #x1B[94mimport#x1B[39;49;00m DeepfakeDetector#x1B[90m#x1B[39;49;00m
+#x1B[1m#x1B[31msrc/ai_engine/deepfake_detector.py#x1B[0m:2: in &lt;module&gt;
+    #x1B[94mimport#x1B[39;49;00m #x1B[04m#x1B[96mmediapipe#x1B[39;49;00m #x1B[94mas#x1B[39;49;00m #x1B[04m#x1B[96mmp#x1B[39;49;00m#x1B[90m#x1B[39;49;00m
+#x1B[1m#x1B[31mE   ModuleNotFoundError: No module named 'mediapipe'#x1B[0m#x1B[0m</error></testcase><testcase classname="" name="tests.test_twitter" time="0.000"><error message="collection failure">#x1B[31mImportError while importing test module '/mnt/data/OSINT-main/OSINT-main/tests/test_twitter.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+#x1B[1m#x1B[31m/usr/local/lib/python3.11/importlib/__init__.py#x1B[0m:126: in import_module
+    #x1B[94mreturn#x1B[39;49;00m _bootstrap._gcd_import(name[level:], package, level)#x1B[90m#x1B[39;49;00m
+#x1B[1m#x1B[31mtests/test_twitter.py#x1B[0m:2: in &lt;module&gt;
+    #x1B[94mfrom#x1B[39;49;00m #x1B[04m#x1B[96msrc#x1B[39;49;00m#x1B[04m#x1B[96m.#x1B[39;49;00m#x1B[04m#x1B[96mcollectors#x1B[39;49;00m#x1B[04m#x1B[96m.#x1B[39;49;00m#x1B[04m#x1B[96mtwitter#x1B[39;49;00m #x1B[94mimport#x1B[39;49;00m collect_tweets#x1B[90m#x1B[39;49;00m
+#x1B[1m#x1B[31msrc/collectors/twitter.py#x1B[0m:2: in &lt;module&gt;
+    #x1B[94mimport#x1B[39;49;00m #x1B[04m#x1B[96mtweepy#x1B[39;49;00m#x1B[90m#x1B[39;49;00m
+#x1B[1m#x1B[31mE   ModuleNotFoundError: No module named 'tweepy'#x1B[0m#x1B[0m</error></testcase></testsuite></testsuites>
