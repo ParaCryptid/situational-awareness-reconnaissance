@@ -28,7 +28,7 @@ jobs:
       - name: CodeQL Initialization
         uses: github/codeql-action/init@v2
         with:
-          languages: 'javascript, python, HTML'
+          languages: 'javascript, python'
 
       - name: Perform Static Security Scan
         uses: github/codeql-action/analyze@v2
