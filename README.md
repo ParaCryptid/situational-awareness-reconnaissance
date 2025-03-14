@@ -1,16 +1,21 @@
-# OSINT-main
-
-## Project Overview
-This is a fully enhanced repository.
-
-## Setup Instructions
-1. Clone the repository.
-2. Install dependencies: `pip install -r requirements.txt`
-3. Run tests: `pytest`.
+# OSINT
+    
+## Overview
+This repository is part of **Apex Security International** and maintained at [www.apexsecurityint.com](https://www.apexsecurityint.com).
 
 ## Features
-- CI/CD pipeline.
-- Unit tests.
-- Optimized dependencies.
-## Contributing
-Contributions are welcome. Please open a pull request.
+- Secure and automated cybersecurity solutions.
+- Designed for intelligence, security, and network defense.
+
+## Installation
+```bash
+git clone https://github.com/ParaCryptid/OSINT.git
+cd OSINT
+./install.sh
+```
+
+## License
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+## Maintainers
+- Managed by **Apex Security International**.
