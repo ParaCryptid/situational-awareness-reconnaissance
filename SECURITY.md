@@ -1,14 +1,10 @@
+
 # Security Policy
 
-## Reporting Security Issues
-Please report any security vulnerabilities via [security@apexsecurityint.com](mailto:security@apexsecurityint.com).
-
 ## Supported Versions
-We regularly update this project to maintain security and stability.
 
-| Version | Supported          |
-|---------|------------------|
-| 1.x     | ✅ |
+Only the latest version will receive security updates.
 
-## Security Updates
-This repository is monitored for vulnerabilities, and patches are released regularly.
+## Reporting a Vulnerability
+
+Please email contact@apexsecurityint.com or use GitHub security advisory.

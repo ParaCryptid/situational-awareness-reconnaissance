@@ -1,2 +1,6 @@
-# Example dependency list
-pytest==7.4.0
+pytest
+flake8
+pyinstaller
+numpy
+geojson
+cryptography

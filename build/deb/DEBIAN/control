@@ -1,0 +1,8 @@
+Package: osint-toolkit
+Version: 1.0.0
+Section: base
+Priority: optional
+Architecture: all
+Maintainer: Apex Security Int Ltd <contact@apexsecurityint.com>
+Description: Multi-platform OSINT toolkit for reconnaissance and intelligence gathering.
+ Secure, portable, and professionally maintained.

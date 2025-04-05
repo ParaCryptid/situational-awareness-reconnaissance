@@ -1,38 +1,42 @@
 from geojson import Point, Feature, FeatureCollection
 import random
 import time
+import logging
+from typing import Dict
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 class GeospatialMonitor:
-    def __init__(self, region_bounds):
+    def __init__(self, region_bounds: Dict[str, float]):
         """
         Initialize the geospatial monitor with region boundaries.
         :param region_bounds: A dictionary with 'lat_min', 'lat_max', 'lon_min', 'lon_max'.
         """
         self.region_bounds = region_bounds
 
-    def simulate_event(self):
+    def simulate_event(self) -> Feature:
         """
         Simulate a geospatial event within the region bounds.
-        :return: A GeoJSON feature representing the event.
+        :return: A GeoJSON Feature representing the event.
         """
-        lat = random.uniform(self.region_bounds["lat_min"], self.region_bounds["lat_max"])
-        lon = random.uniform(self.region_bounds["lon_min"], self.region_bounds["lon_max"])
+        lat = random.uniform(self.region_bounds['lat_min'], self.region_bounds['lat_max'])
+        lon = random.uniform(self.region_bounds['lon_min'], self.region_bounds['lon_max'])
+        event_type = random.choice(['Intrusion', 'Sensor Trigger', 'Anomaly', 'Data Spike'])
+
         point = Point((lon, lat))
-        event_type = random.choice(["Protest", "Traffic Incident", "Power Outage"])
-        feature = Feature(geometry=point, properties={"event_type": event_type, "risk_level": random.randint(1, 5)})
+        feature = Feature(geometry=point, properties={
+            "event": event_type,
+            "timestamp": time.time()
+        })
+
+        logging.info(f"Simulated event: {feature}")
         return feature
 
-    def monitor_region(self, interval=5):
+    def simulate_collection(self, count: int = 5) -> FeatureCollection:
         """
-        Continuously monitor the region and report events.
-        :param interval: Time interval (in seconds) between event simulations.
+        Simulate a collection of events.
+        :param count: Number of events to simulate.
+        :return: A GeoJSON FeatureCollection.
         """
-        while True:
-            event = self.simulate_event()
-            print(f"New Event: {event}")
-            time.sleep(interval)
-
-# Example usage
-# bounds = {"lat_min": 34.0, "lat_max": 36.0, "lon_min": -118.0, "lon_max": -117.0}
-# monitor = GeospatialMonitor(bounds)
-# monitor.monitor_region(interval=10)
+        features = [self.simulate_event() for _ in range(count)]
+        return FeatureCollection(features)

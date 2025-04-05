@@ -1,38 +1,32 @@
 import numpy as np
+import logging
+from typing import List
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s - %(levelname)s - %(message)s")
 
 class FederatedLearningModel:
     def __init__(self):
-        """
-        Initialize the federated learning model.
-        """
+        """Initialize the federated learning model."""
         self.global_model = None
-        self.client_models = []
+        self.client_models: List[np.ndarray] = []
 
-    def add_client_model(self, model_weights):
+    def add_client_model(self, model_weights: np.ndarray):
         """
         Add client model weights for aggregation.
         :param model_weights: Weights of the client model.
         """
+        if not isinstance(model_weights, np.ndarray):
+            raise TypeError("Model weights must be a numpy array.")
         self.client_models.append(model_weights)
+        logging.info(f"Added client model with shape {model_weights.shape}")
 
-    def aggregate_models(self):
+    def aggregate_models(self) -> np.ndarray:
         """
-        Aggregate client models into the global model.
+        Aggregate all client models to update the global model.
+        :return: Aggregated model weights.
         """
         if not self.client_models:
-            raise ValueError("No client models to aggregate.")
-        
-        # Compute average weights
+            raise ValueError("No client models available for aggregation.")
         self.global_model = np.mean(self.client_models, axis=0)
-        self.client_models = []  # Reset for next round
-
+        logging.info(f"Global model updated with shape {self.global_model.shape}")
         return self.global_model
-
-# Example usage
-# federated_model = FederatedLearningModel()
-# client_weights1 = np.array([0.1, 0.2, 0.3])
-# client_weights2 = np.array([0.2, 0.3, 0.4])
-# federated_model.add_client_model(client_weights1)
-# federated_model.add_client_model(client_weights2)
-# global_weights = federated_model.aggregate_models()
-# print("Aggregated Global Weights:", global_weights)
